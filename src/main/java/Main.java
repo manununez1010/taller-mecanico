@@ -16,6 +16,9 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             MainWindow window = new MainWindow(directorio, modoWeb);
             window.setVisible(true);
+            if (modoWeb) {
+                gui.PuenteWeb.avisarAppLista();
+            }
         });
     }
 }

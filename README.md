@@ -12,7 +12,7 @@ Desarrollada como trabajo práctico de la carrera de Ingeniería en Informática
 
 La aplicación de escritorio original corre directamente en el navegador gracias a [CheerpJ](https://cheerpj.com), una máquina virtual de Java hecha en WebAssembly. La primera carga puede tardar unos segundos, y los cambios se guardan automáticamente en el navegador de cada persona.
 
-💻 **Como aplicación de escritorio:** descargá **TallerMecanico.jar** desde [Releases](https://github.com/manununez1010/taller-mecanico/releases/latest) y abrilo con doble clic. Requiere **Java 17 o superior** ([descarga gratuita](https://adoptium.net)).
+💻 **Como aplicación de escritorio:** descargá **TallerMecanico.jar** desde [Releases](https://github.com/manununez1010/taller-mecanico/releases/latest) y abrilo con doble clic. Requiere **Java 8 o superior** ([descarga gratuita](https://adoptium.net)).
 
 En los dos casos la aplicación arranca con datos de ejemplo, que se pueden volver a cargar en cualquier momento desde **Archivo → Restaurar datos de ejemplo**.
 
@@ -58,7 +58,7 @@ capturas/                # Imágenes para este README
 
 ## Tecnologías
 
-- **Java 17**
+- **Java** (compatible desde Java 8 en adelante)
 - **Swing** para la interfaz gráfica
 - **Gson** para la serialización a JSON
 - **Maven** para la gestión del proyecto y sus dependencias
@@ -68,7 +68,7 @@ capturas/                # Imágenes para este README
 
 **Con IntelliJ IDEA (recomendado):** abrí la carpeta del proyecto, esperá a que Maven descargue las dependencias y ejecutá la clase `Main`.
 
-**Desde la terminal** (con Java 17 o superior y Maven instalados):
+**Desde la terminal** (con Java 8 o superior y Maven instalados):
 
 ```bash
 mvn compile exec:java

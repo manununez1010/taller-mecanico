@@ -120,7 +120,7 @@ public class Cliente extends Persona {
     public String generarResumenCompleto() {
         StringBuilder sb = new StringBuilder();
         sb.append(generarContacto()).append("\n");
-        sb.append("=".repeat(60)).append("\n");
+        sb.append(String.join("", java.util.Collections.nCopies(60, "="))).append("\n");
         
         if (vehiculos.isEmpty()) {
             sb.append("No tiene vehículos registrados");

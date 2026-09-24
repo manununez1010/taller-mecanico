@@ -23,18 +23,33 @@
     header p { margin: 0; font-size: 0.85rem; color: #cbd2d9; }
     header a { color: #fbbf24; font-weight: 600; text-decoration: none; }
     header a:hover { text-decoration: underline; }
+
     #app { flex: 1; position: relative; min-height: 0; background: #e5e7eb; }
-    #aviso {
-      position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 0.8rem; text-align: center; padding: 1rem; color: #1f2933; pointer-events: none;
+
+    /* Pantalla de carga: tapa la app hasta que la ventana de Java está lista */
+    #carga {
+      position: absolute; inset: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+      background: #1f2933;
     }
-    #aviso strong { font-size: 1.2rem; }
-    .spinner {
-      width: 38px; height: 38px; border-radius: 50%;
-      border: 4px solid #cbd2d9; border-top-color: #f59e0b; animation: girar 0.9s linear infinite;
+    .tarjeta {
+      width: min(460px, 100%); background: #111827; border: 1px solid #374151; border-radius: 14px;
+      padding: 1.6rem 1.5rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-    @keyframes girar { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+    .tarjeta .icono { font-size: 2.4rem; line-height: 1; }
+    .tarjeta h2 { margin: 0.6rem 0 0.3rem; font-size: 1.25rem; }
+    #etapa { margin: 0 0 1.1rem; color: #cbd2d9; min-height: 1.5em; }
+    .barra { height: 10px; border-radius: 999px; background: #374151; overflow: hidden; }
+    .barra i {
+      display: block; height: 100%; width: 0; border-radius: 999px; background: #f59e0b;
+      transition: width 0.6s ease-out;
+    }
+    #tiempo { margin: 0.7rem 0 0; font-size: 0.85rem; color: #9aa5b1; }
+    #ayuda { display: none; margin-top: 1.1rem; font-size: 0.92rem; color: #f5f7fa; text-align: left;
+      background: #1f2933; border-radius: 10px; padding: 0.8rem 0.9rem; }
+    #ayuda a { color: #fbbf24; }
+    .nota { margin: 1rem 0 0; font-size: 0.8rem; color: #9aa5b1; }
+    @media (prefers-reduced-motion: reduce) { .barra i { transition: none; } }
   </style>
 </head>
 <body>
@@ -47,32 +62,96 @@
   </header>
 
   <div id="app">
-    <div id="aviso">
-      <div class="spinner"></div>
-      <strong>Cargando la aplicación…</strong>
-      <span>La primera vez puede tardar unos segundos, porque se descarga la máquina virtual de Java.</span>
+    <div id="carga" role="status" aria-live="polite">
+      <div class="tarjeta">
+        <div class="icono" aria-hidden="true">🔧</div>
+        <h2>Abriendo el taller…</h2>
+        <p id="etapa">Preparando todo</p>
+        <div class="barra" aria-hidden="true"><i id="progreso"></i></div>
+        <p id="tiempo"></p>
+        <div id="ayuda">
+          Está tardando más de lo habitual. Podés <a href="javascript:location.reload()">recargar la página</a>,
+          o descargar la <a href="https://github.com/manununez1010/taller-mecanico/releases/latest">versión de escritorio</a>.
+        </div>
+        <p class="nota">La primera vez puede tardar hasta un minuto, porque se descarga una máquina virtual de Java. Las siguientes visitas son mucho más rápidas.</p>
+      </div>
     </div>
   </div>
 
   <script>
+    // Lista opcional de archivos del runtime para descargar por adelantado (se completa con cjGetRuntimeResources)
+    const PRECARGA = {};
+
+    const carga = document.getElementById("carga");
+    const etapa = document.getElementById("etapa");
+    const progreso = document.getElementById("progreso");
+    const tiempo = document.getElementById("tiempo");
+    const ayuda = document.getElementById("ayuda");
+
+    const inicio = Date.now();
+    let porcentaje = 0;
+    let lista = false;
+
+    function mostrarEtapa(texto, minimo) {
+      etapa.textContent = texto;
+      porcentaje = Math.max(porcentaje, minimo);
+      progreso.style.width = porcentaje + "%";
+    }
+
+    // Avance estimado: la barra se acerca de a poco al 95% mientras se espera
+    const reloj = setInterval(() => {
+      if (lista) return;
+      const segundos = Math.round((Date.now() - inicio) / 1000);
+      tiempo.textContent = segundos + " segundos";
+      porcentaje = Math.min(95, porcentaje + (95 - porcentaje) * 0.04);
+      progreso.style.width = porcentaje + "%";
+      if (segundos === 20) mostrarEtapa("Descargando los componentes de Java…", 0);
+      if (segundos === 45) mostrarEtapa("Ya casi está, gracias por la paciencia…", 0);
+      if (segundos >= 90) ayuda.style.display = "block";
+    }, 1000);
+
+    function appLista() {
+      if (lista) return;
+      lista = true;
+      clearInterval(reloj);
+      mostrarEtapa("¡Listo!", 100);
+      setTimeout(() => carga.remove(), 400);
+    }
+
     (async function () {
-      const contenedor = document.getElementById("app");
-      const aviso = document.getElementById("aviso");
+      try {
+        mostrarEtapa("Iniciando la máquina virtual de Java…", 10);
+        const opciones = {
+          version: 8,
+          status: "none",
+          javaProperties: [
+            "taller.datos=/files/taller-mecanico", // almacenamiento persistente del navegador
+            "taller.web=true"                      // pantalla completa y guardado automático
+          ],
+          natives: {
+            // Java avisa desde gui.PuenteWeb cuando la ventana ya está visible
+            async Java_gui_PuenteWeb_notificarAppLista() { appLista(); }
+          }
+        };
+        if (Object.keys(PRECARGA).length > 0) {
+          opciones.preloadResources = PRECARGA;
+          opciones.preloadProgress = (hecho, total) =>
+            mostrarEtapa("Descargando componentes (" + hecho + " de " + total + ")…", 10 + (hecho / total) * 70);
+        }
+        await cheerpjInit(opciones);
 
-      await cheerpjInit({
-        version: 17,
-        javaProperties: [
-          "taller.datos=/files/taller-mecanico", // almacenamiento persistente del navegador
-          "taller.web=true"                      // pantalla completa y guardado automático
-        ]
-      });
+        mostrarEtapa("Abriendo la aplicación…", 40);
+        cheerpjCreateDisplay(-1, -1, document.getElementById("app"));
 
-      aviso.remove();
-      cheerpjCreateDisplay(-1, -1, contenedor);
-
-      // "/app/" apunta a la raíz del servidor, por eso se agrega la ruta de esta página
-      const carpeta = location.pathname.replace(/[^/]*$/, "");
-      await cheerpjRunJar("/app" + carpeta + "TallerMecanico.jar");
+        // "/app/" apunta a la raíz del servidor, por eso se agrega la ruta de esta página
+        const carpeta = location.pathname.replace(/[^/]*$/, "");
+        await cheerpjRunJar("/app" + carpeta + "TallerMecanico.jar");
+      } catch (e) {
+        console.error(e);
+        clearInterval(reloj);
+        etapa.textContent = "No se pudo abrir la aplicación en este navegador.";
+        ayuda.style.display = "block";
+      }
     })();
   </script>
 </body>

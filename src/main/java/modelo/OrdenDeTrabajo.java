@@ -356,9 +356,9 @@ public class OrdenDeTrabajo {
             this.repuestosUtilizados = new HashMap<>();
         }
 
-        factura.append("═".repeat(70)).append("\n");
+        factura.append(String.join("", java.util.Collections.nCopies(70, "═"))).append("\n");
         factura.append("                    ORDEN DE TRABAJO #").append(idOrden).append("\n");
-        factura.append("═".repeat(70)).append("\n\n");
+        factura.append(String.join("", java.util.Collections.nCopies(70, "═"))).append("\n\n");
 
      
         factura.append("CLIENTE:\n");
@@ -382,7 +382,7 @@ public class OrdenDeTrabajo {
 
       
         factura.append("SERVICIOS REALIZADOS:\n");
-        factura.append("-".repeat(70)).append("\n");
+        factura.append(String.join("", java.util.Collections.nCopies(70, "-"))).append("\n");
 
         if (listaServicios.isEmpty()) {
             factura.append("  No hay servicios registrados\n");
@@ -398,10 +398,10 @@ public class OrdenDeTrabajo {
             }
         }
 
-        factura.append("-".repeat(70)).append("\n\n");
+        factura.append(String.join("", java.util.Collections.nCopies(70, "-"))).append("\n\n");
 
         factura.append("REPUESTOS UTILIZADOS:\n");
-        factura.append("-".repeat(70)).append("\n");
+        factura.append(String.join("", java.util.Collections.nCopies(70, "-"))).append("\n");
 
         if (repuestosUtilizados.isEmpty()) {
             factura.append("  No hay repuestos registrados\n");
@@ -416,7 +416,7 @@ public class OrdenDeTrabajo {
             }
         }
 
-        factura.append("-".repeat(70)).append("\n\n");
+        factura.append(String.join("", java.util.Collections.nCopies(70, "-"))).append("\n\n");
 
  
         factura.append("TOTALES:\n");
@@ -429,7 +429,7 @@ public class OrdenDeTrabajo {
             factura.append("  ").append(observaciones).append("\n");
         }
 
-        factura.append("\n").append("═".repeat(70)).append("\n");
+        factura.append("\n").append(String.join("", java.util.Collections.nCopies(70, "═"))).append("\n");
 
         return factura.toString();
     }

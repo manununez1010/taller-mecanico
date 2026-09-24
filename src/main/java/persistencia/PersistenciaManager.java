@@ -423,8 +423,9 @@ public class PersistenciaManager {
                 this.codigoColor = sp.getCodigoColor();
                 this.tipoPintura = sp.getTipoPintura();
                 this.superficie = sp.getSuperficie();
-            } else if (s instanceof modelo.ServicioReparacion sr) {
+            } else if (s instanceof modelo.ServicioReparacion) {
                 this.tipo = "REPARACION";
+                modelo.ServicioReparacion sr = (modelo.ServicioReparacion) s;
                 this.horasTrabajo = sr.getHorasTrabajo();
                 this.costoPorHora = sr.getCostoPorHora();
             } else {
