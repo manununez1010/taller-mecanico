@@ -145,7 +145,7 @@
 
         // "/app/" apunta a la raíz del servidor, por eso se agrega la ruta de esta página
         const carpeta = location.pathname.replace(/[^/]*$/, "");
-        await cheerpjRunJar("/app" + carpeta + "TallerMecanico.jar");
+        await cheerpjRunJar("/app" + carpeta + "TallerMecanico-1.1.jar");
       } catch (e) {
         console.error(e);
         clearInterval(reloj);
