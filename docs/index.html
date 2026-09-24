@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Gestión de Taller Mecánico</title>
+  <meta name="description" content="Aplicación en Java para gestionar un taller mecánico, funcionando directamente en el navegador.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+  <!-- CheerpJ: máquina virtual de Java que corre en el navegador -->
+  <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex; flex-direction: column;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #1f2933; color: #f5f7fa;
+    }
+    header {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      padding: 0.6rem 1rem; background: #111827; border-bottom: 3px solid #f59e0b;
+    }
+    header h1 { font-size: 1.05rem; margin: 0; font-weight: 700; }
+    header p { margin: 0; font-size: 0.85rem; color: #cbd2d9; }
+    header a { color: #fbbf24; font-weight: 600; text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    #app { flex: 1; position: relative; min-height: 0; background: #e5e7eb; }
+    #aviso {
+      position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.8rem; text-align: center; padding: 1rem; color: #1f2933; pointer-events: none;
+    }
+    #aviso strong { font-size: 1.2rem; }
+    .spinner {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 4px solid #cbd2d9; border-top-color: #f59e0b; animation: girar 0.9s linear infinite;
+    }
+    @keyframes girar { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>🔧 Sistema de Gestión de Taller Mecánico</h1>
+      <p>Aplicación de escritorio en Java funcionando en el navegador. Tus cambios se guardan en este navegador.</p>
+    </div>
+    <a href="https://github.com/manununez1010/taller-mecanico">Ver el código en GitHub →</a>
+  </header>
+
+  <div id="app">
+    <div id="aviso">
+      <div class="spinner"></div>
+      <strong>Cargando la aplicación…</strong>
+      <span>La primera vez puede tardar unos segundos, porque se descarga la máquina virtual de Java.</span>
+    </div>
+  </div>
+
+  <script>
+    (async function () {
+      const contenedor = document.getElementById("app");
+      const aviso = document.getElementById("aviso");
+
+      await cheerpjInit({
+        version: 17,
+        javaProperties: [
+          "taller.datos=/files/taller-mecanico", // almacenamiento persistente del navegador
+          "taller.web=true"                      // pantalla completa y guardado automático
+        ]
+      });
+
+      aviso.remove();
+      cheerpjCreateDisplay(-1, -1, contenedor);
+
+      // "/app/" apunta a la raíz del servidor, por eso se agrega la ruta de esta página
+      const carpeta = location.pathname.replace(/[^/]*$/, "");
+      await cheerpjRunJar("/app" + carpeta + "TallerMecanico.jar");
+    })();
+  </script>
+</body>
+</html>

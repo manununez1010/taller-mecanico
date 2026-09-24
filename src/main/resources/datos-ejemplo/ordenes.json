@@ -1,0 +1,258 @@
+[
+  {
+    "idOrden": 1,
+    "vehiculoId": 1,
+    "mecanicoId": 5,
+    "estado": "ENTREGADA",
+    "observaciones": "Service programado de 60.000 km.",
+    "fechaIngreso": "2026-08-24T08:40",
+    "fechaEntrega": "2026-08-24T17:30",
+    "servicios": [
+      {
+        "tipo": "MANTENIMIENTO",
+        "idServicio": 1,
+        "descripcion": "Service de 60.000 km",
+        "costoBase": 85000.0,
+        "tipoMantenimiento": "Preventivo",
+        "kilometraje": 60120
+      }
+    ],
+    "repuestos": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1
+    }
+  },
+  {
+    "idOrden": 2,
+    "vehiculoId": 2,
+    "mecanicoId": 4,
+    "estado": "ENTREGADA",
+    "observaciones": "El cliente nota ruido al frenar y vibración en el pedal.",
+    "fechaIngreso": "2026-08-27T09:10",
+    "fechaEntrega": "2026-08-28T18:00",
+    "servicios": [
+      {
+        "tipo": "DIAGNOSTICO",
+        "idServicio": 2,
+        "descripcion": "Revisión del sistema de frenos",
+        "costoBase": 25000.0,
+        "nivelComplejidad": "BAJO",
+        "resultado": "Pastillas gastadas y discos rayados",
+        "requiereAprobacion": false
+      },
+      {
+        "tipo": "REPARACION",
+        "idServicio": 3,
+        "descripcion": "Cambio de pastillas y discos delanteros",
+        "costoBase": 15000.0,
+        "horasTrabajo": 2.5,
+        "costoPorHora": 28000.0
+      }
+    ],
+    "repuestos": {
+      "5": 1,
+      "6": 2,
+      "11": 1
+    }
+  },
+  {
+    "idOrden": 3,
+    "vehiculoId": 4,
+    "mecanicoId": 3,
+    "estado": "ENTREGADA",
+    "observaciones": "Raspón en paragolpes trasero y guardabarros izquierdo.",
+    "fechaIngreso": "2026-09-01T10:00",
+    "fechaEntrega": "2026-09-05T12:30",
+    "servicios": [
+      {
+        "tipo": "PINTURA",
+        "idServicio": 4,
+        "descripcion": "Pintura de paragolpes trasero y guardabarros",
+        "costoBase": 120000.0,
+        "codigoColor": "Blanco Nacré EWP",
+        "tipoPintura": "Uretano",
+        "superficie": 1.8
+      }
+    ],
+    "repuestos": {}
+  },
+  {
+    "idOrden": 4,
+    "vehiculoId": 6,
+    "mecanicoId": 2,
+    "estado": "CANCELADA",
+    "observaciones": "Tironeo al acelerar en frío.\nMotivo de cancelación: El cliente decidió hacer la reparación en el concesionario por garantía.",
+    "fechaIngreso": "2026-09-03T11:20",
+    "servicios": [
+      {
+        "tipo": "DIAGNOSTICO",
+        "idServicio": 5,
+        "descripcion": "Escaneo computarizado y revisión de encendido",
+        "costoBase": 30000.0,
+        "nivelComplejidad": "MEDIO",
+        "resultado": "Bobina de encendido con falla intermitente",
+        "requiereAprobacion": true
+      }
+    ],
+    "repuestos": {}
+  },
+  {
+    "idOrden": 5,
+    "vehiculoId": 3,
+    "mecanicoId": 1,
+    "estado": "COMPLETADA",
+    "observaciones": "Unidad de flota. Cambio de distribución por kilometraje.",
+    "fechaIngreso": "2026-09-14T08:00",
+    "servicios": [
+      {
+        "tipo": "MANTENIMIENTO",
+        "idServicio": 6,
+        "descripcion": "Mantenimiento de 100.000 km",
+        "costoBase": 95000.0,
+        "tipoMantenimiento": "Preventivo",
+        "kilometraje": 101450
+      },
+      {
+        "tipo": "REPARACION",
+        "idServicio": 7,
+        "descripcion": "Reemplazo de kit de distribución y bomba de agua",
+        "costoBase": 30000.0,
+        "horasTrabajo": 6.0,
+        "costoPorHora": 30000.0
+      }
+    ],
+    "repuestos": {
+      "1": 1,
+      "4": 2,
+      "9": 1,
+      "12": 4
+    }
+  },
+  {
+    "idOrden": 6,
+    "vehiculoId": 8,
+    "mecanicoId": 1,
+    "estado": "EN_PROCESO",
+    "observaciones": "Unidad de flota. Patina el embrague en subidas con carga.",
+    "fechaIngreso": "2026-09-18T08:30",
+    "servicios": [
+      {
+        "tipo": "REPARACION",
+        "idServicio": 8,
+        "descripcion": "Cambio de kit de embrague",
+        "costoBase": 40000.0,
+        "horasTrabajo": 7.0,
+        "costoPorHora": 30000.0
+      }
+    ],
+    "repuestos": {
+      "15": 1
+    }
+  },
+  {
+    "idOrden": 7,
+    "vehiculoId": 9,
+    "mecanicoId": 4,
+    "estado": "ESPERANDO_REPUESTOS",
+    "observaciones": "Ruido en tren delantero al pasar por pozos. Falta un amortiguador: pedido al proveedor.",
+    "fechaIngreso": "2026-09-19T09:45",
+    "servicios": [
+      {
+        "tipo": "DIAGNOSTICO",
+        "idServicio": 9,
+        "descripcion": "Revisión de tren delantero y suspensión",
+        "costoBase": 35000.0,
+        "nivelComplejidad": "ALTO",
+        "resultado": "Amortiguadores delanteros vencidos",
+        "requiereAprobacion": false
+      },
+      {
+        "tipo": "REPARACION",
+        "idServicio": 10,
+        "descripcion": "Reemplazo de amortiguadores delanteros",
+        "costoBase": 20000.0,
+        "horasTrabajo": 3.0,
+        "costoPorHora": 28000.0
+      }
+    ],
+    "repuestos": {
+      "10": 1
+    }
+  },
+  {
+    "idOrden": 8,
+    "vehiculoId": 5,
+    "mecanicoId": 2,
+    "estado": "ESPERANDO_APROBACION",
+    "observaciones": "Se enciende la luz de check engine y a veces no arranca.",
+    "fechaIngreso": "2026-09-21T15:10",
+    "servicios": [
+      {
+        "tipo": "DIAGNOSTICO",
+        "idServicio": 11,
+        "descripcion": "Diagnóstico de falla eléctrica intermitente",
+        "costoBase": 40000.0,
+        "nivelComplejidad": "MEDIO",
+        "resultado": "Burro de arranque con desgaste; se presupuesta reemplazo",
+        "requiereAprobacion": true
+      }
+    ],
+    "repuestos": {}
+  },
+  {
+    "idOrden": 9,
+    "vehiculoId": 11,
+    "mecanicoId": 3,
+    "estado": "EN_PROCESO",
+    "observaciones": "Capot con pintura quemada por el sol.",
+    "fechaIngreso": "2026-09-22T10:00",
+    "servicios": [
+      {
+        "tipo": "PINTURA",
+        "idServicio": 12,
+        "descripcion": "Pintura completa de capot",
+        "costoBase": 90000.0,
+        "codigoColor": "Gris Plata NH700M",
+        "tipoPintura": "Laca",
+        "superficie": 1.6
+      }
+    ],
+    "repuestos": {}
+  },
+  {
+    "idOrden": 10,
+    "vehiculoId": 10,
+    "estado": "PENDIENTE",
+    "observaciones": "Auto de colección. Revisar carburador y puesta a punto antes de un encuentro de clásicos.",
+    "fechaIngreso": "2026-09-23T09:00",
+    "servicios": [
+      {
+        "tipo": "GENERICO",
+        "idServicio": 13,
+        "descripcion": "Revisión general y puesta a punto de carburador",
+        "costoBase": 55000.0
+      }
+    ],
+    "repuestos": {}
+  },
+  {
+    "idOrden": 11,
+    "vehiculoId": 7,
+    "estado": "PENDIENTE",
+    "observaciones": "Service de 90.000 km. El cliente pasa a retirarlo el viernes.",
+    "fechaIngreso": "2026-09-23T11:30",
+    "servicios": [
+      {
+        "tipo": "MANTENIMIENTO",
+        "idServicio": 14,
+        "descripcion": "Service de 90.000 km",
+        "costoBase": 80000.0,
+        "tipoMantenimiento": "Preventivo",
+        "kilometraje": 90310
+      }
+    ],
+    "repuestos": {}
+  }
+]

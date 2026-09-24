@@ -1,0 +1,47 @@
+[
+  {
+    "idMecanico": 1,
+    "especialidad": "Motor y transmisión",
+    "disponible": false,
+    "idPersona": 0,
+    "nombre": "Roberto Sánchez",
+    "telefono": "11 6120-4432",
+    "email": "roberto.sanchez@tallerelpiston.com.ar"
+  },
+  {
+    "idMecanico": 2,
+    "especialidad": "Electricidad del automotor",
+    "disponible": false,
+    "idPersona": 0,
+    "nombre": "Diego Fernández",
+    "telefono": "11 6120-4433",
+    "email": "diego.fernandez@tallerelpiston.com.ar"
+  },
+  {
+    "idMecanico": 3,
+    "especialidad": "Chapa y pintura",
+    "disponible": false,
+    "idPersona": 0,
+    "nombre": "Marcela Ruiz",
+    "telefono": "11 6120-4434",
+    "email": "marcela.ruiz@tallerelpiston.com.ar"
+  },
+  {
+    "idMecanico": 4,
+    "especialidad": "Frenos y suspensión",
+    "disponible": false,
+    "idPersona": 0,
+    "nombre": "Julián Acosta",
+    "telefono": "11 6120-4435",
+    "email": "julian.acosta@tallerelpiston.com.ar"
+  },
+  {
+    "idMecanico": 5,
+    "especialidad": "Mantenimiento general",
+    "disponible": true,
+    "idPersona": 0,
+    "nombre": "Hernán Castro",
+    "telefono": "11 6120-4436",
+    "email": "hernan.castro@tallerelpiston.com.ar"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "idRepuesto": 1,
+    "codigo": "FIL-ACE-01",
+    "nombre": "Filtro de aceite",
+    "descripcion": "Filtro de aceite universal para motores nafteros y diésel livianos",
+    "precioUnitario": 14500.0,
+    "stockDisponible": 22
+  },
+  {
+    "idRepuesto": 2,
+    "codigo": "FIL-AIR-01",
+    "nombre": "Filtro de aire",
+    "descripcion": "Filtro de aire de motor, elemento de papel",
+    "precioUnitario": 18900.0,
+    "stockDisponible": 14
+  },
+  {
+    "idRepuesto": 3,
+    "codigo": "FIL-HAB-01",
+    "nombre": "Filtro de habitáculo",
+    "descripcion": "Filtro antipolen para aire acondicionado",
+    "precioUnitario": 16200.0,
+    "stockDisponible": 11
+  },
+  {
+    "idRepuesto": 4,
+    "codigo": "ACE-5W30-4L",
+    "nombre": "Aceite sintético 5W30 (4 L)",
+    "descripcion": "Aceite de motor 100% sintético, bidón de 4 litros",
+    "precioUnitario": 62000.0,
+    "stockDisponible": 15
+  },
+  {
+    "idRepuesto": 5,
+    "codigo": "PAS-DEL-01",
+    "nombre": "Pastillas de freno delanteras",
+    "descripcion": "Juego de pastillas cerámicas, eje delantero",
+    "precioUnitario": 48000.0,
+    "stockDisponible": 9
+  },
+  {
+    "idRepuesto": 6,
+    "codigo": "DIS-DEL-01",
+    "nombre": "Disco de freno delantero",
+    "descripcion": "Disco ventilado, se vende por unidad",
+    "precioUnitario": 55000.0,
+    "stockDisponible": 6
+  },
+  {
+    "idRepuesto": 7,
+    "codigo": "BUJ-IRI-01",
+    "nombre": "Bujía de iridio",
+    "descripcion": "Bujía de larga duración, se vende por unidad",
+    "precioUnitario": 15500.0,
+    "stockDisponible": 32
+  },
+  {
+    "idRepuesto": 8,
+    "codigo": "BAT-12V-65",
+    "nombre": "Batería 12V 65Ah",
+    "descripcion": "Batería libre de mantenimiento",
+    "precioUnitario": 145000.0,
+    "stockDisponible": 4
+  },
+  {
+    "idRepuesto": 9,
+    "codigo": "KIT-DIS-01",
+    "nombre": "Kit de distribución",
+    "descripcion": "Correa, tensor y rodillo de distribución",
+    "precioUnitario": 135000.0,
+    "stockDisponible": 3
+  },
+  {
+    "idRepuesto": 10,
+    "codigo": "AMO-DEL-01",
+    "nombre": "Amortiguador delantero",
+    "descripcion": "Amortiguador hidráulico, se vende por unidad",
+    "precioUnitario": 98000.0,
+    "stockDisponible": 2
+  },
+  {
+    "idRepuesto": 11,
+    "codigo": "LIQ-FRE-500",
+    "nombre": "Líquido de frenos DOT 4 (500 ml)",
+    "descripcion": "Líquido de frenos sintético",
+    "precioUnitario": 9800.0,
+    "stockDisponible": 19
+  },
+  {
+    "idRepuesto": 12,
+    "codigo": "REF-ORG-1L",
+    "nombre": "Refrigerante orgánico (1 L)",
+    "descripcion": "Refrigerante listo para usar",
+    "precioUnitario": 8500.0,
+    "stockDisponible": 26
+  },
+  {
+    "idRepuesto": 13,
+    "codigo": "LAM-H7",
+    "nombre": "Lámpara H7 55W",
+    "descripcion": "Lámpara halógena para faro principal",
+    "precioUnitario": 7200.0,
+    "stockDisponible": 25
+  },
+  {
+    "idRepuesto": 14,
+    "codigo": "ESC-LIM-01",
+    "nombre": "Escobillas limpiaparabrisas (par)",
+    "descripcion": "Escobillas de silicona, medida universal",
+    "precioUnitario": 12500.0,
+    "stockDisponible": 14
+  },
+  {
+    "idRepuesto": 15,
+    "codigo": "KIT-EMB-01",
+    "nombre": "Kit de embrague",
+    "descripcion": "Placa, disco y crapodina",
+    "precioUnitario": 260000.0,
+    "stockDisponible": 2
+  }
+]

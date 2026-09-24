@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "nombre": "Martín Gómez",
+    "email": "martin.gomez@gmail.com",
+    "telefono": "11 4783-2291",
+    "direccion": "Av. Cabildo 2150, Belgrano, CABA"
+  },
+  {
+    "id": 2,
+    "nombre": "Laura Fernández",
+    "email": "laufernandez@hotmail.com",
+    "telefono": "11 5932-7710",
+    "direccion": "Gurruchaga 1432, Palermo, CABA"
+  },
+  {
+    "id": 3,
+    "nombre": "Carlos Pereyra",
+    "email": "cpereyra@yahoo.com.ar",
+    "telefono": "11 4611-0458",
+    "direccion": "Av. Rivadavia 6780, Flores, CABA"
+  },
+  {
+    "id": 4,
+    "nombre": "Sofía Romero",
+    "email": "sofi.romero@gmail.com",
+    "telefono": "11 6025-3344",
+    "direccion": "Av. Maipú 1820, Vicente López, Bs. As."
+  },
+  {
+    "id": 5,
+    "nombre": "Javier Morales",
+    "email": "javier.morales@outlook.com",
+    "telefono": "11 4788-9021",
+    "direccion": "Juramento 3011, Belgrano, CABA"
+  },
+  {
+    "id": 6,
+    "nombre": "Valeria Castro",
+    "email": "vale.castro@gmail.com",
+    "telefono": "11 3345-1188",
+    "direccion": "Av. Santa Fe 3450, Palermo, CABA"
+  },
+  {
+    "id": 7,
+    "nombre": "Transportes del Sur SRL",
+    "email": "flota@transportesdelsur.com.ar",
+    "telefono": "11 4244-6600",
+    "direccion": "Av. Hipólito Yrigoyen 11200, Lomas de Zamora, Bs. As."
+  },
+  {
+    "id": 8,
+    "nombre": "Ricardo Benítez",
+    "email": "rbenitez@gmail.com",
+    "telefono": "11 4981-3276",
+    "direccion": "Díaz Vélez 4520, Almagro, CABA"
+  },
+  {
+    "id": 9,
+    "nombre": "Paula Giménez",
+    "email": "paulagimenez@gmail.com",
+    "telefono": "11 5487-9003",
+    "direccion": "Av. Del Libertador 14500, Martínez, Bs. As."
+  },
+  {
+    "id": 10,
+    "nombre": "Andrés Luna",
+    "email": "andres.luna@gmail.com",
+    "telefono": "11 4504-7765",
+    "direccion": "Av. San Martín 3210, Villa del Parque, CABA"
+  }
+]

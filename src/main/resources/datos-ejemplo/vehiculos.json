@@ -1,0 +1,98 @@
+[
+  {
+    "idVehiculo": 1,
+    "marca": "Toyota",
+    "modelo": "Corolla XEi",
+    "placa": "AD 482 KP",
+    "anioFabricacion": 2019,
+    "propietarioId": 1
+  },
+  {
+    "idVehiculo": 2,
+    "marca": "Volkswagen",
+    "modelo": "Gol Trend",
+    "placa": "AA 915 JC",
+    "anioFabricacion": 2016,
+    "propietarioId": 2
+  },
+  {
+    "idVehiculo": 3,
+    "marca": "Ford",
+    "modelo": "Ranger XLT",
+    "placa": "AE 107 TR",
+    "anioFabricacion": 2021,
+    "propietarioId": 7
+  },
+  {
+    "idVehiculo": 4,
+    "marca": "Peugeot",
+    "modelo": "208 Allure",
+    "placa": "AF 336 LM",
+    "anioFabricacion": 2022,
+    "propietarioId": 4
+  },
+  {
+    "idVehiculo": 5,
+    "marca": "Fiat",
+    "modelo": "Cronos Drive",
+    "placa": "AD 998 XY",
+    "anioFabricacion": 2020,
+    "propietarioId": 5
+  },
+  {
+    "idVehiculo": 6,
+    "marca": "Chevrolet",
+    "modelo": "Onix LT",
+    "placa": "AC 250 PQ",
+    "anioFabricacion": 2018,
+    "propietarioId": 6
+  },
+  {
+    "idVehiculo": 7,
+    "marca": "Renault",
+    "modelo": "Sandero Stepway",
+    "placa": "OKL 842",
+    "anioFabricacion": 2015,
+    "propietarioId": 3
+  },
+  {
+    "idVehiculo": 8,
+    "marca": "Toyota",
+    "modelo": "Hilux SRV",
+    "placa": "AB 603 ST",
+    "anioFabricacion": 2017,
+    "propietarioId": 7
+  },
+  {
+    "idVehiculo": 9,
+    "marca": "Volkswagen",
+    "modelo": "Amarok Highline",
+    "placa": "AD 145 RW",
+    "anioFabricacion": 2019,
+    "propietarioId": 7
+  },
+  {
+    "idVehiculo": 10,
+    "marca": "Fiat",
+    "modelo": "147 Spazio",
+    "placa": "UYT 452",
+    "anioFabricacion": 1989,
+    "propietarioId": 8
+  },
+  {
+    "idVehiculo": 11,
+    "marca": "Honda",
+    "modelo": "Civic EXS",
+    "placa": "NFB 624",
+    "anioFabricacion": 2014,
+    "propietarioId": 9
+  },
+  {
+    "idVehiculo": 12,
+    "marca": "Ford",
+    "modelo": "Fiesta Kinetic",
+    "placa": "LHG 219",
+    "anioFabricacion": 2012,
+    "propietarioId": 10
+  }
+]
